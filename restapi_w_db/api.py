@@ -18,7 +18,7 @@ def home():
 <p>A prototype API for distant reading of science fiction novels.</p>'''
 
 
-@app.route('/api/v1/resources/books/all', methods=['GET'])
+@app.route('/api/v2/resources/books/all', methods=['GET'])
 def api_all():
     conn = sqlite3.connect('books.db')
     conn.row_factory = dict_factory
@@ -34,7 +34,7 @@ def page_not_found(e):
     return "<h1>404</h1><p>The resource could not be found.</p>", 404
 
 
-@app.route('/api/v1/resources/books', methods=['GET'])
+@app.route('/api/v2/resources/books', methods=['GET'])
 def api_filter():
     query_parameters = request.args
 
